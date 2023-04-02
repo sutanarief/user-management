@@ -4,9 +4,6 @@ const baseUrl = process.env.REACT_APP_BASE_URL
 
 axios.interceptors.request.use(
   async (config) => {
-    if (config.url.includes("register" || "login")) {
-      console.log(config)
-    }
     config.headers["Authorization"] = "Bearer " + localStorage.getItem("token");
     return config;
   },

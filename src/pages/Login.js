@@ -20,7 +20,6 @@ const Login = () => {
     setLoading(true)
     userLogin(loginForm)
     .then((response) => {
-      console.log(response)
       localStorage.setItem("token", response.data.token)
       setLoading(false)
       navigate("/")

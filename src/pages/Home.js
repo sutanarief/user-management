@@ -23,7 +23,6 @@ const Home = () => {
           onClick={() => {
             getDataById(id)
             .then((response) => {
-              console.log(response)
               setData(response.data)
               setIsOpen(true)
               setAction("view")
@@ -36,7 +35,6 @@ const Home = () => {
           onClick={() => {
             getDataById(id)
             .then((response) => {
-              console.log(response)
               setData(response.data)
               setIsOpen(true)
               setAction("edit")
@@ -77,7 +75,6 @@ const Home = () => {
 
   const formatBornDate = (str) => {
     let strSplit = str.split("-")
-    console.log(strSplit[1])
     const bulanTemplate = [
       "Januari", 
       "Februari", 
@@ -117,7 +114,6 @@ const Home = () => {
   }
 
   useEffect(() => {
-    console.log(localStorage.getItem("token"))
     if (!localStorage.getItem("token")) {
       navigate("/login")
     }
@@ -126,7 +122,6 @@ const Home = () => {
   useEffect(() => {
     getAllData()
     .then((response) => {
-      console.log(response)
       setUserData(response.data)
     })
   }, [])

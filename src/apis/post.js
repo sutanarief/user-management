@@ -14,3 +14,9 @@ export const userLogin = (payload) => {
   .post(`${baseUrl}/auth/login`, payload)
   .then((response => response))
 }
+
+export const createUser = (body) => {
+  return axios
+  .post(`${baseUrl}/user`, body)
+  .then((response) => response.data)
+}
